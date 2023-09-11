@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ReservationList from './components/ReservationList';
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+import ReservationSearch from './components/ReservationSearch';
+import ReservationFilter from './components/ReservationFilter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        justifyContent="center"
+        sx={{ minHeight: '100vh' }}
+      >
+        <Grid item style={{ marginBottom: 25 }} justifyContent="start">
+          <ReservationSearch />
+          <ReservationFilter />
+        </Grid>
+        <Grid item>
+          <ReservationList />
+        </Grid>
+
+      </Grid>
+    </Container>
   );
 }
 
